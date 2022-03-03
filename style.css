@@ -1,3 +1,97 @@
+/*Accordion*/
+
+/*-------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+/* Sets the background color of the body to blue. Sets font to Rubik */
+
+body {
+  background-color: #0A2344;
+  font-family: 'rubik', sans-serif;
+  color: #888;
+}
+
+/* Aligns the heading text to the center. */
+ 
+h1 {
+  text-align: center;
+}
+
+/* Sets the width for the accordion. Sets the margin to 90px on the top and bottom and auto to the left and right */
+
+.accordion {
+  width: 800px;
+  margin: 90px auto;
+  color: rgb(168, 165, 165);
+  background-color: #112c50;
+  padding: 5px 5px;
+}
+
+.accordion .container {
+  position: relative;
+  margin: 5px 5px;
+}
+
+/* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer */
+
+.accordion .label {
+  position: relative;
+  padding: 5px 0;
+  font-size: 25px;
+  color: rgb(255, 251, 251);
+  cursor: pointer;
+}
+
+
+/* Positions the plus sign 5px from the right. Centers it using the transform property. */
+
+.accordion .label::before {
+  content: '+';
+  color: rgb(241, 203, 12);
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  font-size: 30px;
+  transform: translateY(-50%);
+}
+
+/* Hides the content (height: 0), decreases font size, justifies text and adds transition */
+
+.accordion .content {
+  position: relative;
+  background: #112c50;
+  height: 0;
+  font-size: 20px;
+  text-align: justify;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+/* Adds a horizontal line between the contents */
+
+.accordion hr {
+  width: 100%;
+  margin-left: 0;
+  border: 0.05px solid grey;
+}
+
+
+/* Unhides the content part when active. Sets the height */
+
+.accordion .container.active .content {
+  height: auto;
+}
+
+/* Changes from plus sign to negative sign once active */
+
+.accordion .container.active .label::before {
+  content: '-';
+  font-size: 30px;
+}
+
+
+
+
 /*smart form*/
 h1,h2 {
   font-weight: 200;
