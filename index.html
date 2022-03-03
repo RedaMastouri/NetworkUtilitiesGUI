@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <title>Network GUI</title>
+</head>
+     
+
+<body>
+
+    <header>
+
+        <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+        <div class="overlay"></div>
+      
+        <!-- The HTML5 video element that will create the background video on the header -->
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+          <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+        </video>
+      
+        <!-- The header content -->
+        <div class="container h-100">
+          <div class="d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+              <h1 class="display-3">Network Utilities GUI</h1>
+              <p class="lead mb-0">Brought to you by: Reda Mastouri PhD.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+      
+      <!-- Page section example for content below the video header -->
+      <section class="my-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-32 mx-auto">
+              <p>Designing the visual composition and temporal behavior of a GUI is an important part of software application programming in the area of human–computer interaction. Its goal is to enhance the efficiency and ease of use for the underlying logical design of a stored program, a design discipline named usability.</p>
+              <p>This is a GUI interface for the most known network and forensics utilities</p>
+              <p>
+                <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Type in Command Prompt net utility:</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter a cmd/terminal command">
+                      <small id="emailHelp" class="form-text text-muted">This would be launched on the background runnung a *.bat file</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Pick the operating system type: Mac Os, Linux, Windows ..etc</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Operating system">
+                    </div>
+                    <div class="form-group form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check the command debug tool</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Run</button>
+                  </form>
+              </p>
+              <p>Here are more ways to run the .bat scripts:</p>
+              <p>
+                <script type="text/javascript">
+                    function myFunction(){
+                        var wshShell = new ActiveXObject("WScript.Shell"); //Create WScript Object
+                        wshShell.Run("./test.bat"); // Please change the path and file name with your relevant available path in client system. This code can be used to execute .exe file as well
+                    }
+                </SCRIPT>
+                    
+                <input type="button" class="btn btn-primary" value="Test Script: I" onClick="myFunction()">
+
+              </p>
+
+              <p>
+                <script type="text/javascript">
+                    function reda()
+                    {
+                        var runnableScript = exec(
+                                './test.bat',
+                                (error, stdout, stderr) => {
+                                console.log(stdout);
+                                console.log(stderr);
+                                if (error !== null) 
+                                {
+                                    console.log(`exec error: ${error}`);
+                                }
+                        });
+                    }
+                </SCRIPT>
+                <input type="button" class="btn btn-primary" value="Test Script: II" onClick="reda()">
+
+              </p>
+              <p>
+                <script type="text/javascript">
+                    function john(){
+                       var WshShell = new ActiveXObject("Wscript.Shell"); //Create WScript Object
+                       WshShell.run("./test.bat"); // Please change the path and file name with your relevant available path in client system. This code can be used to execute .exe file as well
+                    }
+                </SCRIPT>
+                <INPUT TYPE=Button Name=btn class="btn btn-primary" Value="Test Script: III" onClick="john()">
+
+              </p>
+              <p>
+                <script>
+                    function klaoui(){
+                        //there we go for win32
+                        //if (process.platform === 'win32') {
+                        // your code
+                            require('child_process').exec(process.env.ComSpec + ' /c test.bat', function(){
+                            // …you callback code may run here…
+                            });
+                        //}
+                    }
+                </script>
+                <INPUT TYPE=Button Name=btn class="btn btn-primary" Value="Test Script: IV" onClick="klaoui()">
+
+              </p>
+              <p>
+                <input type="button" value="Test Script: V" class="btn btn-primary" onclick="window.open('./test.bat')" />
+
+              </p>                           
+              <p>
+                <script>
+                    function sasha(target, context, msg, self){
+                        if (self){return;} //ignore messages from the bot 
+                        // Remove whitespace from chat message
+                        const commandName = msg.trim();
+            
+                        if (commandName === '!encender') {
+                            require('child_process').exec(process.env.ComSpec + 'cmd /k ./test.bat');
+                            client.say(target, `Has encendido la tira led ^^`);
+                            console.log(`* Executed ${commandName} command`);
+                        }
+                    }
+                </script>
+                <INPUT TYPE=Button Name=btn class="btn btn-primary" Value="Test Script: VI" onClick="sasha()">
+              </p>   
+              </div>
+          </div>
+        </div>
+      </section>
+
+
+<!--footer starts from here-->
+<footer class="footer">
+    <div class="container bottom_border">
+    <div class="row">
+    <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+    <h5 class="headin5_amrc col_white_amrc pt2">Reda Mastouri</h5>
+    <!--headin5_amrc-->
+    <p class="mb10">Passionate about data, statistics, and technology. Lover of books and all things meaningful.</p>
+    <p><i class="fa fa-location-arrow"></i> 39 Logan Ave </p>
+    <p><i class="fa fa-phone"></i>  +1 856-882-9056  </p>
+    <p><i class="fa fa fa-envelope"></i> reda.mastouri@rutgers.edu  </p>
+    </div>
+    
+    
+    <div class=" col-sm-4 col-md  col-6 col">
+    <h5 class="headin5_amrc col_white_amrc pt2">Published Articles</h5>
+    <!--headin5_amrc-->
+    <ul class="footer_ul_amrc">
+    <li><a href="https://redamastouri.com/post/seattle-rain/">DevSecOps</a></li>
+    <li><a href="https://redamastouri.com/talk/multiverse/">Multi-Verse</a></li>
+    <li><a href="https://redamastouri.com/talk/digital_transformation/">Digital Transformation</a></li>
+    </ul>
+    <!--footer_ul_amrc ends here-->
+    </div>
+    
+    
+    <div class=" col-sm-4 col-md  col-6 col">
+    <h5 class="headin5_amrc col_white_amrc pt2">Data Sciences Projects</h5>
+    <!--headin5_amrc-->
+    <ul class="footer_ul_amrc">
+    <li><a href="https://github.com/RedaMastouri/MalwarePredictor">Massinissa v1.0</a></li>
+    <li><a href="https://github.com/RedaMastouri/marvis">Marvis</a></li>
+    <li><a href="https://github.com/RedaMastouri/projectEuler">Project Euler</a></li>
+    </ul>
+    <!--footer_ul_amrc ends here-->
+    </div>
+    
+    
+    <div class=" col-sm-4 col-md  col-12 col">
+    <h5 class="headin5_amrc col_white_amrc pt2">Know more about Me..</h5>
+    <!--headin5_amrc ends here-->
+    
+    <ul class="footer_ul2_amrc">
+    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Follow me on twitter<a href="https://twitter.com/redamastouri">@mastourireda</a></p></li>
+    </ul>
+    <!--footer_ul2_amrc ends here-->
+    </div>
+    </div>
+    </div>
+    
+    
+    <div class="container">
+    <ul class="foote_bottom_ul_amrc">
+    <li><a href="http://redamastouri.com">Network Simulators</a></li>
+    <li><a href="http://redamastouri.com">Network Utilities</a></li>
+    <li><a href="http://redamastouri.com">Forensics</a></li>
+    <li><a href="http://redamastouri.com">IoT Hacks</a></li>
+
+    </ul>
+    <!--foote_bottom_ul_amrc ends here-->
+    <p class="text-center">Copyright @2022 | Designed With by <a href="https://www.redamastouri.com">Reda Mastouri PhD.</a></p>
+    
+    <ul class="social_footer_ul">
+    <li><a href="http://redamastouri.com"><i class="fab fa-facebook-f"></i></a></li>
+    <li><a href="http://redamastouri.com"><i class="fab fa-twitter"></i></a></li>
+    <li><a href="http://redamastouri.com"><i class="fab fa-linkedin"></i></a></li>
+    <li><a href="http://redamastouri.com"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+    <!--social_footer_ul ends here-->
+    </div>
+    
+    </footer>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+</html>
